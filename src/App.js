@@ -7,7 +7,7 @@ import "./App.css";
 
 let correctGuesses = 0;
 let bestScore = 0;
-let clickMessage = "Go ahead! Start clicking!";
+let clickMessage = "Click on an image to earn points, but don't click on any of them more than once!";
 
 class App extends Component {
     
@@ -75,6 +75,17 @@ class App extends Component {
         return (
             <Wrapper>
                 <Title>To boldly click where no one has clicked before!</Title>
+        
+                <h3 className="scoreSummary">
+                    {this.state.clickMessage}
+                </h3>
+                
+                <h3 className="scoreSummary">
+                    Correct Guesses: {this.state.correctGuesses} 
+                    <br />
+                    Best Score: {this.state.bestScore} 
+                </h3>
+
                 {this.state.matches.map(match => (
                     <MatchCard
                         setClicked={this.setClicked}
@@ -83,28 +94,7 @@ class App extends Component {
                         image={match.image}
                     />
                 ))}
-
-                <div>
-                <h2 className="scoreSummary">
-                    Click on an image to earn points, but don't click on any of them more than once!
-                </h2>
-                
-                <h3 className="scoreSummary">
-                    {this.state.clickMessage}
-                </h3>
-                
-                <h3 className="scoreSummary">
-                    Correct Guesses: {this.state.correctGuesses} 
-                </h3>
-                
-                <h3 className="scoreSummary">
-                    Best Score: {this.state.bestScore} 
-                </h3>
-                </div>
-                
             </Wrapper>
-
-
         );
     }
 }

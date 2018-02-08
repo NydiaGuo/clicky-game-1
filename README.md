@@ -23,5 +23,5 @@ In this project, I created a simple memory game with React. The goal here was to
 * HTML
 * CSS
 * JavaScript
-* npm.js
+* Node.js
 * React
