@@ -14,7 +14,7 @@ In this project, I created a simple memory game with React. The goal here was to
 
 4. If the user clicks on an image they're already clicked on in the current round, their Correct Guesses score is reset to 0.
 
-5. The application keeps track of the users Best Score.
+5. The application keeps track of the users Best Score, and updates it when the user achieves a new Best.
 
 - - -
 
