@@ -45,8 +45,8 @@ class App extends Component {
             this.setState({ correctGuesses });
             this.setState({matches});
 
-        // Otherwise, ff clicked = false
-        } else {
+        // Otherwise, if clicked = false, and the user hasn't finished
+        } else if (correctGuesses < 12) {
 
             // Set its value to true
             clickedMatch[0].clicked = true;
@@ -68,6 +68,34 @@ class App extends Component {
             this.setState({ matches });
             this.setState({correctGuesses});
             this.setState({clickMessage});
+        } else {
+
+            // Set its value to true
+            clickedMatch[0].clicked = true;
+
+            // restart the guess counter
+            correctGuesses = 0;
+
+            // Egg on the user to play again
+            clickMessage = "WOW!!! You got ALL of them!!! Now, let's see if you can do it again!";
+
+            if (correctGuesses > bestScore){
+                bestScore = correctGuesses;
+                this.setState({ bestScore });
+            }
+
+            for (let i = 0 ; i < matches.length ; i++){
+                matches[i].clicked = false;
+            }
+
+            // Shuffle the array to be rendered in a random order
+            matches.sort(function(a, b){return 0.5 - Math.random()});
+
+            // Set this.state.matches equal to the new matches array
+            this.setState({ matches });
+            this.setState({correctGuesses});
+            this.setState({clickMessage});
+
         }
     };
 
