@@ -80,7 +80,7 @@ class App extends Component {
             clickMessage = "WOW!!! You got ALL of them!!! Now, let's see if you can do it again!";
 
             if (correctGuesses > bestScore){
-                bestScore = correctGuesses;
+                bestScore = correctGuesses + 1;
                 this.setState({ bestScore });
             }
 
