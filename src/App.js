@@ -78,12 +78,9 @@ class App extends Component {
 
             // Egg on the user to play again
             clickMessage = "WOW!!! You got ALL of them!!! Now, let's see if you can do it again!";
-
-            if (correctGuesses > bestScore){
-                bestScore = correctGuesses + 1;
-                this.setState({ bestScore });
-            }
-
+            bestScore = 12;
+            this.setState({ bestScore });
+            
             for (let i = 0 ; i < matches.length ; i++){
                 matches[i].clicked = false;
             }
