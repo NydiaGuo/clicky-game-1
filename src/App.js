@@ -46,7 +46,7 @@ class App extends Component {
             this.setState({matches});
 
         // Otherwise, if clicked = false, and the user hasn't finished
-        } else if (correctGuesses < 12) {
+        } else if (correctGuesses < 11) {
 
             // Set its value to true
             clickedMatch[0].clicked = true;
